@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  PRESTACLUB Design System
+  Premium Financial Real Estate Theme
+  Colors: Deep Navy + Gold/Amber + Pure White
+*/
+
+@layer base {
+  :root {
+    /* Core palette */
+    --background: 222 47% 6%;
+    --foreground: 45 30% 96%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 45 30% 96%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 45 30% 96%;
+
+    /* Navy Blue - Primary institutional color */
+    --primary: 222 47% 15%;
+    --primary-foreground: 45 30% 96%;
+
+    /* Gold/Amber - Accent for premium feel */
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 222 47% 6%;
+
+    /* Muted tones */
+    --muted: 222 30% 18%;
+    --muted-foreground: 220 15% 60%;
+
+    /* Accent - subtle gold */
+    --accent: 38 80% 45%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
+    --ring: 38 80% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens for premium styling */
+    --gold: 38 92% 50%;
+    --gold-light: 45 100% 70%;
+    --gold-dark: 35 85% 40%;
+    --navy: 222 47% 11%;
+    --navy-light: 222 35% 20%;
+    --navy-dark: 222 55% 6%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(45 100% 70%) 100%);
+    --gradient-navy: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(222 55% 6%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 8% / 0.95) 0%, hsl(222 47% 4% / 0.9) 50%, hsl(35 40% 10% / 0.85) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(222 47% 10%) 0%, hsl(222 47% 6%) 100%);
+    --gradient-text: linear-gradient(90deg, hsl(38 92% 50%) 0%, hsl(45 100% 70%) 100%);
+
+    /* Shadows */
+    --shadow-gold: 0 4px 30px hsl(38 92% 50% / 0.15);
+    --shadow-card: 0 8px 32px hsl(222 55% 4% / 0.6);
+    --shadow-elevated: 0 20px 60px hsl(222 55% 4% / 0.8);
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 45 30% 96%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 18%;
+    --sidebar-accent-foreground: 45 30% 96%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 38 80% 50%;
+  }
+
+  .dark {
+    /* Same as root - dark theme by default */
+    --background: 222 47% 6%;
+    --foreground: 45 30% 96%;
+    --card: 222 47% 8%;
+    --card-foreground: 45 30% 96%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 45 30% 96%;
+    --primary: 222 47% 15%;
+    --primary-foreground: 45 30% 96%;
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 222 47% 6%;
+    --muted: 222 30% 18%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 38 80% 45%;
+    --accent-foreground: 222 47% 6%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
+    --ring: 38 80% 50%;
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 45 30% 96%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 18%;
+    --sidebar-accent-foreground: 45 30% 96%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 38 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-navy {
+    background: var(--gradient-navy);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Premium border with gold glow */
+  .border-gold-glow {
+    border: 1px solid hsl(var(--gold) / 0.3);
+    box-shadow: 0 0 20px hsl(var(--gold) / 0.1);
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: hsl(var(--navy) / 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* Deck slide styling */
+  .deck-slide {
+    @apply w-full h-full flex flex-col justify-center p-8 md:p-16;
+    background: var(--gradient-card);
+  }
+
+  /* Premium list styling */
+  .premium-list li::before {
+    content: '→';
+    @apply text-secondary mr-3 font-bold;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Source Sans 3', sans-serif;
+  }
+}
