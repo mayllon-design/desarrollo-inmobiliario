@@ -1,5 +1,5 @@
-import { Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoFooter from '../assets/logo-footer.svg';
 
 const Footer = () => {
   return (
@@ -8,14 +8,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center">
-                <Building2 className="w-5 h-5 text-secondary-foreground" />
-              </div>
-              <span className="font-display text-xl font-bold">Prestaclub</span>
+            <Link to="/" className="inline-block mb-4">
+              <img src={logoFooter} alt="Prestaclub" className="h-12 w-auto" />
             </Link>
             <p className="text-muted-foreground font-body text-sm max-w-md">
-              Financiamiento estructurado para desarrollo inmobiliario. 
+              Financiamiento estructurado para desarrollo inmobiliario.
               Capital con garantía hipotecaria, otorgado por fondos de inversión.
             </p>
           </div>

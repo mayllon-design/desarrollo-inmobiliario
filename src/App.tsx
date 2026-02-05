@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Deck from "./pages/Deck";
 import NotFound from "./pages/NotFound";
 
+const isProduction = import.meta.env.PROD;
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -14,7 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/desarrollo-inmobiliario">
+      <BrowserRouter basename={isProduction ? "/desarrollo-inmobiliario" : "/"}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/deck" element={<Deck />} />
